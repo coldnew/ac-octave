@@ -51,12 +51,12 @@
 ;;;;;;;; faces
 (defface ac-octave-candidate-face
   '((t (:inherit ac-candidate-face)))
-  "face for clang candidate"
+  "face for octave candidate"
   :group 'auto-complete)
 
 (defface ac-octave-selection-face
   '((t (:inherit ac-selection-face)))
-  "face for the clang selected candidate."
+  "face for the octave selected candidate."
   :group 'auto-complete)
 
 
