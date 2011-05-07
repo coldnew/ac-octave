@@ -5,7 +5,7 @@
 ;; Author: coldnew <coldnew.tw@gmail.com>
 ;; Keywords: Octave, auto-compldte, complettion
 ;; X-URL: http://www.emacswiki.org/cgi-bin/wiki/download/ac-octave.el
-(defconst ac-octave-version "0.1")
+(defconst ac-octave-version "0.2")
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -23,7 +23,9 @@
 
 ;;; Change Log:
 ;;
+;; 0.2: remove dulpicates completions.
 ;; 0.1: ac-octave.el 0.1 released.
+;;
 
 ;;; Install
 ;; Put this file into load-path'ed directory, and byte compile it if
@@ -83,6 +85,11 @@
 
     (setq ac-octave-complete-list
 	  (sort inferior-octave-output-list 'string-lessp))
+
+    ;; remove dulpicates lists
+    (delete-duplicates ac-octave-complete-list
+		       :test (lambda (x y) (or (null y)) (equal x y))
+		       :from-end t)
     ))
 
 
