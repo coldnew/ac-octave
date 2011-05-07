@@ -30,9 +30,11 @@
 ;; desired.  And put the following expression into your ~/.emacs.
 ;;
 ;; (require 'ac-octave)
-;; (setq ac-sources
-;;      '(ac-source-octave
-;;            ))
+;; (defun ac-octave-mode-setup ()
+;;   (setq ac-sources '(ac-source-octave)))
+;; (add-hook 'octave-mode-hook
+;;	  '(lambda () (ac-octave-mode-setup)))
+;;
 
 ;;; Code:
 
