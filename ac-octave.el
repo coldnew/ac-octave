@@ -79,9 +79,10 @@
     (inferior-octave-send-list-and-digest
      (list (concat "completion_matches (\"" command "\");\n")))
 
-    (sort inferior-octave-output-list 'string-lessp))
-  )
-)
+    (setq ac-octave-complete-list
+	  (sort inferior-octave-output-list 'string-lessp))
+    ))
+
 
 (defun ac-octave-candidate ()
   (let (table)
