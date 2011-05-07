@@ -87,9 +87,8 @@
 	  (sort inferior-octave-output-list 'string-lessp))
 
     ;; remove dulpicates lists
-    (delete-duplicates ac-octave-complete-list
-		       :test (lambda (x y) (or (null y)) (equal x y))
-		       :from-end t)
+    (delete-dups ac-octave-complete-list)
+
     ))
 
 
