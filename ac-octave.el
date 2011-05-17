@@ -3,7 +3,7 @@
 ;; Copyright (c) 2011  coldnew <coldnew.tw@gmail.com>
 ;;
 ;; Author: coldnew <coldnew.tw@gmail.com>
-;; Keywords: Octave, auto-compldte, complettion
+;; Keywords: Octave, auto-complete, completion
 ;; X-URL: http://www.emacswiki.org/cgi-bin/wiki/download/ac-octave.el
 (defconst ac-octave-version "0.2")
 
@@ -26,6 +26,9 @@
 ;; 0.2: remove dulpicates completions.
 ;; 0.1: ac-octave.el 0.1 released.
 ;;
+
+;;; TODO:
+;;  Add help-document in completion-menu
 
 ;;; Install
 ;; Put this file into load-path'ed directory, and byte compile it if
@@ -77,8 +80,8 @@
   (interactive)
   (let* ((end (point))
 	 (command (save-excursion
-		   (skip-syntax-backward "w_")
-		   (buffer-substring-no-properties (point) end))))
+		    (skip-syntax-backward "w_")
+		    (buffer-substring-no-properties (point) end))))
 
     (inferior-octave-send-list-and-digest
      (list (concat "completion_matches (\"" command "\");\n")))
@@ -96,20 +99,20 @@
   (let (table)
     (ac-octave-do-complete)
     (dolist (s ac-octave-complete-list)
-	    (push s table))
+      (push s table))
     table)
   )
 
 
 (ac-define-source octave
-		  '((candidates . ac-octave-candidate)
-		    (candidate-face . ac-octave-candidate-face)
-		    (selection-face . ac-octave-selection-face)
-		    (init . ac-octave-init)
-		    (requires . 0)
-		    (cache)
-		    (symbol . "f")
-		    ))
+  '((candidates . ac-octave-candidate)
+    (candidate-face . ac-octave-candidate-face)
+    (selection-face . ac-octave-selection-face)
+    (init . ac-octave-init)
+    (requires . 0)
+    (cache)
+    (symbol . "f")
+    ))
 
 
 
