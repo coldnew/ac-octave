@@ -1,6 +1,6 @@
 ;;; ac-octave.el --- An auto-complete source for Octave
 
-;; Copyright (c) 2011  coldnew <coldnew.tw@gmail.com>
+;; Copyright (c) 2011 coldnew <coldnew.tw@gmail.com>
 ;;
 ;; Author: coldnew <coldnew.tw@gmail.com>
 ;; Keywords: Octave, auto-complete, completion
@@ -14,7 +14,7 @@
 ;;
 ;; This program is distributed in the hope that it will be useful,
 ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 ;; GNU General Public License for more details.
 ;;
 ;; You should have received a copy of the GNU General Public License
@@ -28,17 +28,17 @@
 ;;
 
 ;;; TODO:
-;;  Add help-document in completion-menu
+;; Add help-document in completion-menu
 
 ;;; Install
 ;; Put this file into load-path'ed directory, and byte compile it if
-;; desired.  And put the following expression into your ~/.emacs.
+;; desired. And put the following expression into your ~/.emacs.
 ;;
 ;; (require 'ac-octave)
 ;; (defun ac-octave-mode-setup ()
-;;   (setq ac-sources '(ac-source-octave)))
+;; (setq ac-sources '(ac-source-octave)))
 ;; (add-hook 'octave-mode-hook
-;;	  '(lambda () (ac-octave-mode-setup)))
+;; '(lambda () (ac-octave-mode-setup)))
 ;;
 
 ;;; Code:
@@ -48,7 +48,7 @@
 (require 'octave-inf)
 
 ;;;;##########################################################################
-;;;;  User Options, Variables
+;;;; User Options, Variables
 ;;;;##########################################################################
 
 
@@ -79,15 +79,15 @@
 (defun ac-octave-do-complete ()
   (interactive)
   (let* ((end (point))
-	 (command (save-excursion
-		    (skip-syntax-backward "w_")
-		    (buffer-substring-no-properties (point) end))))
+(command (save-excursion
+(skip-syntax-backward "w_")
+(buffer-substring-no-properties (point) end))))
 
     (inferior-octave-send-list-and-digest
      (list (concat "completion_matches (\"" command "\");\n")))
 
     (setq ac-octave-complete-list
-	  (sort inferior-octave-output-list 'string-lessp))
+(sort inferior-octave-output-list 'string-lessp))
 
     ;; remove dulpicates lists
     (delete-dups ac-octave-complete-list)
@@ -120,3 +120,4 @@
 
 (provide 'ac-octave)
 ;; ac-octave.el ends here.
+
