@@ -1,6 +1,6 @@
 ;;; ac-octave.el --- An auto-complete source for Octave
 
-;; Copyright (c) 2011 coldnew <coldnew.tw@gmail.com>
+;; Copyright (c) 2012 coldnew <coldnew.tw@gmail.com>
 ;;
 ;; Author: coldnew <coldnew.tw@gmail.com>
 ;; Keywords: Octave, auto-complete, completion
@@ -41,6 +41,10 @@
 ;; '(lambda () (ac-octave-mode-setup)))
 ;;
 
+;;; NOTE:
+;; If you can't use ac-octave in octave-mode,
+;; check whether auto-complete-mode is running or not.
+
 ;;; Code:
 
 (eval-when-compile (require 'cl))
@@ -79,15 +83,15 @@
 (defun ac-octave-do-complete ()
   (interactive)
   (let* ((end (point))
-(command (save-excursion
-(skip-syntax-backward "w_")
-(buffer-substring-no-properties (point) end))))
+	 (command (save-excursion
+		   (skip-syntax-backward "w_")
+		   (buffer-substring-no-properties (point) end))))
 
     (inferior-octave-send-list-and-digest
      (list (concat "completion_matches (\"" command "\");\n")))
 
     (setq ac-octave-complete-list
-(sort inferior-octave-output-list 'string-lessp))
+	  (sort inferior-octave-output-list 'string-lessp))
 
     ;; remove dulpicates lists
     (delete-dups ac-octave-complete-list)
@@ -99,20 +103,20 @@
   (let (table)
     (ac-octave-do-complete)
     (dolist (s ac-octave-complete-list)
-      (push s table))
+	    (push s table))
     table)
   )
 
 
 (ac-define-source octave
-  '((candidates . ac-octave-candidate)
-    (candidate-face . ac-octave-candidate-face)
-    (selection-face . ac-octave-selection-face)
-    (init . ac-octave-init)
-    (requires . 0)
-    (cache)
-    (symbol . "f")
-    ))
+		  '((candidates . ac-octave-candidate)
+		    (candidate-face . ac-octave-candidate-face)
+		    (selection-face . ac-octave-selection-face)
+		    (init . ac-octave-init)
+		    (requires . 0)
+		    (cache)
+		    (symbol . "f")
+		    ))
 
 
 
@@ -120,4 +124,3 @@
 
 (provide 'ac-octave)
 ;; ac-octave.el ends here.
-
