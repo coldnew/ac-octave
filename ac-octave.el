@@ -79,7 +79,6 @@
   "Start inferior-octave in background before use ac-octave."
   (run-octave t))
 
-
 (defun ac-octave-do-complete ()
   (interactive)
   (let* ((end (point))
@@ -94,33 +93,33 @@
 	  (sort inferior-octave-output-list 'string-lessp))
 
     ;; remove dulpicates lists
-    (delete-dups ac-octave-complete-list)
-
-    ))
-
+    (delete-dups ac-octave-complete-list)))
 
 (defun ac-octave-candidate ()
   (let (table)
     (ac-octave-do-complete)
     (dolist (s ac-octave-complete-list)
 	    (push s table))
-    table)
-  )
+    table))
 
+(defun ac-octave-documentation (symbol)
+  (with-local-quit
+    (ignore-errors
+      (inferior-octave-send-list-and-digest
+       (list (concat "help " symbol ";\n")))
+      (mapconcat #'identity
+                 inferior-octave-output-list
+                 "\n"))))
 
 (ac-define-source octave
 		  '((candidates . ac-octave-candidate)
+                    (document . ac-octave-documentation)
 		    (candidate-face . ac-octave-candidate-face)
 		    (selection-face . ac-octave-selection-face)
 		    (init . ac-octave-init)
 		    (requires . 0)
 		    (cache)
-		    (symbol . "f")
-		    ))
-
-
-
-
+		    (symbol . "f")))
 
 (provide 'ac-octave)
 ;; ac-octave.el ends here.
