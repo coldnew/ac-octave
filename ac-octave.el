@@ -4,6 +4,7 @@
 ;;
 ;; Author: coldnew <coldnew.tw@gmail.com>
 ;; Keywords: Octave, auto-complete, completion
+;; Package-Requires: ((auto-complete "1.4.0"))
 ;; X-URL: http://www.emacswiki.org/cgi-bin/wiki/download/ac-octave.el
 ;; Version: 0.2
 
