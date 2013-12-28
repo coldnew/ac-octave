@@ -5,7 +5,7 @@
 ;; Author: coldnew <coldnew.tw@gmail.com>
 ;; Keywords: Octave, auto-complete, completion
 ;; X-URL: http://www.emacswiki.org/cgi-bin/wiki/download/ac-octave.el
-(defconst ac-octave-version "0.2")
+;; Version: 0.2
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -122,4 +122,4 @@
 		    (symbol . "f")))
 
 (provide 'ac-octave)
-;; ac-octave.el ends here.
+;;; ac-octave.el ends here.
