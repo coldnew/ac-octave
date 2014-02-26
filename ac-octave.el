@@ -78,7 +78,13 @@
 
 (defun ac-octave-init ()
   "Start inferior-octave in background before use ac-octave."
-  (run-octave t))
+  (run-octave t)
+  ;; Update current directory of inferior octave whenever completion starts.
+  ;; This allows local functions to be completed when user switches
+  ;; between octave buffers that are located in different directories.
+  (when (file-readable-p default-directory)
+    (inferior-octave-send-list-and-digest
+     (list (concat "cd " default-directory ";\n")))))
 
 (defun ac-octave-do-complete ()
   (interactive)
