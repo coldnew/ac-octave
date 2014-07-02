@@ -55,7 +55,7 @@
 ;; see issue #6: Error when require octave-inf
 (if (and (>= emacs-major-version 24) (> emacs-minor-version 3))
     (require 'octave)
-  ;; for emacs 24.2 or below
+  ;; for emacs 24.3 or below
   (require 'octave-inf))
 
 ;;;;##########################################################################
