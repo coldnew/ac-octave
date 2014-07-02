@@ -5,8 +5,10 @@
 ;; Author: coldnew <coldnew.tw@gmail.com>
 ;; Keywords: Octave, auto-complete, completion
 ;; Package-Requires: ((auto-complete "1.4.0"))
-;; X-URL: http://www.emacswiki.org/cgi-bin/wiki/download/ac-octave.el
+;; URL: https://github.com/coldnew/ac-octave
 ;; Version: 0.3
+
+;; This file is NOT part of GNU Emacs.
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -22,27 +24,27 @@
 ;; along with this program; if not, write to the Free Software
 ;; Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-;;; Change Log:
+;;; Commentary:
+
+;;; Installation:
+
+;; If you have `melpa' and `emacs24' installed, simply type:
 ;;
-;; 0.3: fix for working on emacs 24.3 or above
-;; 0.2: remove dulpicates completions.
-;; 0.1: ac-octave.el 0.1 released.
+;; 	M-x package-install ac-octave
+;;
+;; Add following lines to your init file:
+;;
+;;     (require 'ac-octave)
+;;     (defun ac-octave-mode-setup ()
+;;       (setq ac-sources '(ac-source-octave)))
+;;       (add-hook 'octave-mode-hook
+;;         '(lambda () (ac-octave-mode-setup)))
 ;;
 
-;;; Install
-;; Put this file into load-path'ed directory, and byte compile it if
-;; desired. And put the following expression into your ~/.emacs.
-;;
-;; (require 'ac-octave)
-;; (defun ac-octave-mode-setup ()
-;; (setq ac-sources '(ac-source-octave)))
-;; (add-hook 'octave-mode-hook
-;; '(lambda () (ac-octave-mode-setup)))
-;;
+;;; Note:
 
-;;; NOTE:
 ;; If you can't use ac-octave in octave-mode,
-;; check whether auto-complete-mode is running or not.
+;; check whether `auto-complete-mode' is running or not.
 
 ;;; Code:
 
