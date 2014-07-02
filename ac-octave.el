@@ -1,12 +1,12 @@
 ;;; ac-octave.el --- An auto-complete source for Octave
 
-;; Copyright (c) 2012 coldnew <coldnew.tw@gmail.com>
+;; Copyright (c) 2012 - 2014 coldnew <coldnew.tw@gmail.com>
 ;;
 ;; Author: coldnew <coldnew.tw@gmail.com>
 ;; Keywords: Octave, auto-complete, completion
 ;; Package-Requires: ((auto-complete "1.4.0"))
 ;; X-URL: http://www.emacswiki.org/cgi-bin/wiki/download/ac-octave.el
-;; Version: 0.2
+;; Version: 0.3
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
