@@ -24,12 +24,10 @@
 
 ;;; Change Log:
 ;;
+;; 0.3: fix for working on emacs 24
 ;; 0.2: remove dulpicates completions.
 ;; 0.1: ac-octave.el 0.1 released.
 ;;
-
-;;; TODO:
-;; Add help-document in completion-menu
 
 ;;; Install
 ;; Put this file into load-path'ed directory, and byte compile it if
@@ -50,12 +48,17 @@
 
 (eval-when-compile (require 'cl))
 (require 'auto-complete)
-(require 'octave-inf)
+
+;; octave-inf.el merge to octave.el since emacs version 24
+;; see issue #6: Error when require octave-inf
+(if (>= emacs-major-version 24)
+    (require 'octave)
+  ;; for emacs 23 or below
+  (require 'octave-inf))
 
 ;;;;##########################################################################
 ;;;; User Options, Variables
 ;;;;##########################################################################
-
 
 
 ;;;;;;;; faces
