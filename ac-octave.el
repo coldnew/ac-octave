@@ -24,7 +24,7 @@
 
 ;;; Change Log:
 ;;
-;; 0.3: fix for working on emacs 24
+;; 0.3: fix for working on emacs 24.3 or above
 ;; 0.2: remove dulpicates completions.
 ;; 0.1: ac-octave.el 0.1 released.
 ;;
@@ -49,11 +49,11 @@
 (eval-when-compile (require 'cl))
 (require 'auto-complete)
 
-;; octave-inf.el merge to octave.el since emacs version 24
+;; octave-inf.el merge to octave.el since emacs version 24.3
 ;; see issue #6: Error when require octave-inf
-(if (>= emacs-major-version 24)
+(if (and (>= emacs-major-version 24) (>= emacs-minor-version 3))
     (require 'octave)
-  ;; for emacs 23 or below
+  ;; for emacs 24.2 or below
   (require 'octave-inf))
 
 ;;;;##########################################################################
