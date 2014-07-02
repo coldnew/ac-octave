@@ -51,9 +51,9 @@
 (eval-when-compile (require 'cl))
 (require 'auto-complete)
 
-;; octave-inf.el merge to octave.el since emacs version 24.3
+;; octave-inf.el merge to octave.el since emacs version 24.3.1
 ;; see issue #6: Error when require octave-inf
-(if (and (>= emacs-major-version 24) (>= emacs-minor-version 3))
+(if (and (>= emacs-major-version 24) (> emacs-minor-version 3))
     (require 'octave)
   ;; for emacs 24.2 or below
   (require 'octave-inf))
