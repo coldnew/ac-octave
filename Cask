@@ -2,4 +2,5 @@
 
 (package-file "ac-octave.el")
 
-(depends-on "auto-complete")
+(development
+ (depends-on "auto-complete"))
