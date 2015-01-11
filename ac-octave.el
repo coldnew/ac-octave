@@ -53,7 +53,8 @@
 
 ;; octave-inf.el merge to octave.el since emacs version 24.3.1
 ;; see issue #6: Error when require octave-inf
-(if (and (>= emacs-major-version 24) (> emacs-minor-version 3))
+(if (or (and (= emacs-major-version 24) (> emacs-minor-version 3))
+	(>= emacs-major-version 25))
     (require 'octave)
   ;; for emacs 24.3 or below
   (require 'octave-inf))
