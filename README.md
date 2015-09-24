@@ -2,6 +2,7 @@
 *An auto-complete source for Octave*
 
 ---
+[![License GPLv2](https://img.shields.io/badge/license-GPL_v2-green.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
 
 ### Installation
 
