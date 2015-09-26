@@ -3,6 +3,8 @@
 
 ---
 [![License GPLv2](https://img.shields.io/badge/license-GPL_v2-green.svg)](http://www.gnu.org/licenses/gpl-2.0.html)
+[![MELPA](http://melpa.org/packages/ac-octave-badge.svg)](http://melpa.org/#/ac-octave)
+[![MELPA Stable](http://stable.melpa.org/packages/ac-octave-badge.svg)](http://stable.melpa.org/#/ac-octave)
 
 ### Installation
 
