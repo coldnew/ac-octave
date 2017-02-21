@@ -124,6 +124,7 @@
                  inferior-octave-output-list
                  "\n"))))
 
+;;;###autoload
 (ac-define-source octave
 		  '((candidates . ac-octave-candidate)
                     (document . ac-octave-documentation)
