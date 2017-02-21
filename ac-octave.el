@@ -30,7 +30,7 @@
 
 ;; If you have `melpa' and `emacs24' installed, simply type:
 ;;
-;; 	M-x package-install ac-octave
+;;  M-x package-install ac-octave
 ;;
 ;; Add following lines to your init file:
 ;;
@@ -55,10 +55,10 @@
 ;; octave-inf.el merge to octave.el since emacs version 24.3.1
 ;; see issue #6: Error when require octave-inf
 (if (or (and (= emacs-major-version 24) (> emacs-minor-version 3))
-	(>= emacs-major-version 25))
+        (>= emacs-major-version 25))
     (require 'octave)
-  ;; for emacs 24.3 or below
-  (require 'octave-inf))
+    ;; for emacs 24.3 or below
+    (require 'octave-inf))
 
 ;;;;##########################################################################
 ;;;; User Options, Variables
@@ -96,15 +96,15 @@
 (defun ac-octave-do-complete ()
   (interactive)
   (let* ((end (point))
-	 (command (save-excursion
-		   (skip-syntax-backward "w_")
-		   (buffer-substring-no-properties (point) end))))
+         (command (save-excursion
+                    (skip-syntax-backward "w_")
+                    (buffer-substring-no-properties (point) end))))
 
     (inferior-octave-send-list-and-digest
      (list (concat "completion_matches (\"" command "\");\n")))
 
     (setq ac-octave-complete-list
-	  (sort inferior-octave-output-list 'string-lessp))
+          (sort inferior-octave-output-list 'string-lessp))
 
     ;; remove dulpicates lists
     (delete-dups ac-octave-complete-list)))
@@ -113,7 +113,7 @@
   (let (table)
     (ac-octave-do-complete)
     (dolist (s ac-octave-complete-list)
-	    (push s table))
+      (push s table))
     table))
 
 (defun ac-octave-documentation (symbol)
@@ -127,14 +127,14 @@
 
 ;;;###autoload
 (ac-define-source octave
-		  '((candidates . ac-octave-candidate)
+                  '((candidates . ac-octave-candidate)
                     (document . ac-octave-documentation)
-		    (candidate-face . ac-octave-candidate-face)
-		    (selection-face . ac-octave-selection-face)
-		    (init . ac-octave-init)
-		    (requires . 0)
-		    (cache)
-		    (symbol . "f")))
+                    (candidate-face . ac-octave-candidate-face)
+                    (selection-face . ac-octave-selection-face)
+                    (init . ac-octave-init)
+                    (requires . 0)
+                    (cache)
+                    (symbol . "f")))
 
 (provide 'ac-octave)
 ;;; ac-octave.el ends here
