@@ -37,7 +37,7 @@
 ;; ```elisp
 ;; (require 'ac-octave)
 ;; (defun ac-octave-mode-setup ()
-;;   (setq ac-sources '(ac-source-octave)))
+;;   (setq ac-sources '(ac-complete-octave)))
 ;; (add-hook 'octave-mode-hook
 ;;           '(lambda () (ac-octave-mode-setup)))
 ;; ```
