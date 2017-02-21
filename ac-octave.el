@@ -6,7 +6,7 @@
 ;; Keywords: Octave, auto-complete, completion
 ;; Package-Requires: ((auto-complete "1.4.0"))
 ;; URL: https://github.com/coldnew/ac-octave
-;; Version: 0.5
+;; Version: 0.6
 
 ;; This file is NOT part of GNU Emacs.
 
