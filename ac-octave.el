@@ -1,6 +1,6 @@
 ;;; ac-octave.el --- An auto-complete source for Octave
 
-;; Copyright (c) 2012 - 2014 coldnew <coldnew.tw@gmail.com>
+;; Copyright (c) 2012 - 2017 coldnew <coldnew.tw@gmail.com>
 ;;
 ;; Author: coldnew <coldnew.tw@gmail.com>
 ;; Keywords: Octave, auto-complete, completion
