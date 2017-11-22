@@ -17,10 +17,8 @@ Add following lines to your init file:
 
 ```elisp
 (require 'ac-octave)
-(defun ac-octave-mode-setup ()
-  (setq ac-sources '(ac-complete-octave)))
 (add-hook 'octave-mode-hook
-          '(lambda () (ac-octave-mode-setup)))
+          '(lambda () (ac-octave-setup)))
 ```
 
 ### Note
@@ -35,6 +33,11 @@ check whether `auto-complete-mode` is running or not.
 #### `(ac-octave-init)`
 
 Start inferior-octave in background before use ac-octave.
+
+#### `(ac-octave-setup)`
+
+Add the octave completion source to the front of ‘ac-sources’.
+This affects only the current buffer.
 
 -----
 <div style="padding-top:15px;color: #d0d0d0;">
