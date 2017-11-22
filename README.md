@@ -36,8 +36,7 @@ Start inferior-octave in background before use ac-octave.
 
 #### `(ac-octave-setup)`
 
-Add the octave completion source to the front of ‘ac-sources’.
-This affects only the current buffer.
+Add the Octave completion source to the front of ‘ac-sources’.
 
 -----
 <div style="padding-top:15px;color: #d0d0d0;">
