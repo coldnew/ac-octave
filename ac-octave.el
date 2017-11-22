@@ -136,8 +136,7 @@
 
 ;;;###autoload
 (defun ac-octave-setup ()
-  "Add the octave completion source to the front of `ac-sources'.
-This affects only the current buffer."
+  "Add the Octave completion source to the front of `ac-sources'."
   (add-to-list 'ac-sources 'ac-source-octave))
 
 (provide 'ac-octave)
