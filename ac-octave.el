@@ -124,6 +124,10 @@
                  "\n"))))
 
 ;;;###autoload
+(autoload 'ac-define-source "auto-complete" "Source definition macro. It defines a complete command also."  nil nil)
+(declare-function ac-define-source "auto-complete")
+
+;;;###autoload
 (ac-define-source octave
   '((candidates . ac-octave-candidate)
     (document . ac-octave-documentation)
