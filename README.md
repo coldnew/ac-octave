@@ -1,3 +1,4 @@
+<a href="https://github.com/coldnew/ac-octave"><img src="https://www.gnu.org/software/emacs/images/emacs.png" alt="Emacs Logo" width="80" height="80" align="right"></a>
 ## ac-octave.el
 *An auto-complete source for Octave*
 
@@ -27,8 +28,9 @@ Add following lines to your init file:
 If you can't use ac-octave in octave-mode,
 check whether `auto-complete-mode` is running or not.
 
-### Function Documentation
 
+
+### Function and Macro Documentation
 
 #### `(ac-octave-init)`
 
@@ -36,7 +38,7 @@ Start inferior-octave in background before use ac-octave.
 
 #### `(ac-octave-setup)`
 
-Add the Octave completion source to the front of ‘ac-sources’.
+Add the Octave completion source to the front of `ac-sources`.
 
 -----
 <div style="padding-top:15px;color: #d0d0d0;">
